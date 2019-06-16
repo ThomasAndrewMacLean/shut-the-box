@@ -1,0 +1,17 @@
+.hide {
+    background: red;
+}
+
+.show {
+    background: greenyellow;
+}
+
+.numberTiles {
+    max-width: 300px;
+}
+
+.numberTile {
+    width: 33.33%;
+    height: 100px;
+    float: left;
+}
