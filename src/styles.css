@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .hide {
     background: red;
 }
@@ -7,11 +12,18 @@
 }
 
 .numberTiles {
-    max-width: 300px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.numberTile {
-    width: 33.33%;
-    height: 100px;
-    float: left;
+.container {
+    max-width: 350px;
+    height: 100vh;
+    overflow: hidden;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    /* grid-gap: 8px; */
 }

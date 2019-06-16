@@ -23,12 +23,14 @@ const Die: React.FunctionComponent<{
         }
     };
     return (
-        <>
+        <div>
             <h1>Dice</h1>
-            <button className="die-btn" onClick={(): void => rollDice()}>Roll</button>
+            <button className="die-btn" onClick={(): void => rollDice()}>
+                Roll
+            </button>
             <div className="die">{die1}</div>
             <div className="die">{die2}</div>
-        </>
+        </div>
     );
 };
 

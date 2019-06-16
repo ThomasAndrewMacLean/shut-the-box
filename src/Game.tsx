@@ -25,7 +25,7 @@ const Count: React.FunctionComponent<{
         setRollTotal(0);
     };
     return (
-        <>
+        <main className="container">
             {/* <h1>{props.count}</h1> */}
             <div className="numberTiles">
                 {tiles.map(
@@ -43,11 +43,10 @@ const Count: React.FunctionComponent<{
                     },
                 )}
             </div>
-            <h4>total: {rollTotal}</h4>
 
             <Die rollTotal={rollTotal} setRollTotal={setRollTotal} />
-            <button onClick={(): void => restartGame()}>Restart</button>
-        </>
+            {/* <button onClick={(): void => restartGame()}>Restart</button> */}
+        </main>
     );
 };
 
