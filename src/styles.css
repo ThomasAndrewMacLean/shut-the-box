@@ -44,7 +44,7 @@ body {
     background: bisque;
     margin: auto;
     display: grid;
-    grid-template-rows: 1fr 5fr 5fr;
+    grid-template-rows: 1fr 5fr 3fr;
     grid-template-columns: 1fr;
     outline: 8px solid #333
 }
