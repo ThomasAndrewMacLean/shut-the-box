@@ -3,27 +3,64 @@
     padding: 0;
 }
 
+html {
+    background: beige;
+}
+
+body {
+    font-family: 'Mali', cursive;
+    margin: 2rem;
+}
+
 .hide {
-    background: red;
+    opacity: 1;
+    cursor: pointer;
 }
 
 .show {
-    background: greenyellow;
+    opacity: 0;
 }
+
+.numberTile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    transition: opacity 0.2s ease-out;
+}
+
 
 .numberTiles {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    outline: 8px solid #333
 }
 
 .container {
-    max-width: 350px;
-    height: 100vh;
+    max-width: 300px;
+    /* height: 100vh; */
     overflow: hidden;
+    background: bisque;
     margin: auto;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 5fr 5fr;
     grid-template-columns: 1fr;
-    /* grid-gap: 8px; */
+    outline: 8px solid #333
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: cornflowerblue;
+}
+
+.restart-btn {
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    font-family: inherit;
 }

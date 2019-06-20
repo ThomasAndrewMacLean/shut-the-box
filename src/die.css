@@ -1,13 +1,22 @@
 .die-btn {
-    background: limegreen;
-    border: 1px solid greenyellow;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 3rem;
+    background: aquamarine;
+    width: 100%;
     padding: 1rem;
+    /* border-top: 8px solid #333; */
     cursor: pointer;
 }
 
 .die {
-    height: 50px;
-    width: 50px;
-    border: 1px solid black;
-    
+    font-size: 8rem;
+}
+
+.die-wrapper {
+    width: 100%;
+    border-top: 8px solid #333;
+    display: flex;
+    background: coral;
+    justify-content: space-evenly;
 }

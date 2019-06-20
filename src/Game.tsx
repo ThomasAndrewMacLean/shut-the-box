@@ -26,7 +26,13 @@ const Count: React.FunctionComponent<{
     };
     return (
         <main className="container">
-            {/* <h1>{props.count}</h1> */}
+            <header>
+                <h1>Shut-the-box</h1>
+                <button className="restart-btn" onClick={(): void => restartGame()}>
+                    Restart
+                </button>
+            </header>
+
             <div className="numberTiles">
                 {tiles.map(
                     (tile, index): JSX.Element => {
@@ -37,7 +43,7 @@ const Count: React.FunctionComponent<{
                                 key={index}
                                 onClick={(): void => flipTile(index)}
                             >
-                                {tile ? 'true' : 'false'} {index + 1}
+                                {index + 1}
                             </div>
                         );
                     },
@@ -45,7 +51,6 @@ const Count: React.FunctionComponent<{
             </div>
 
             <Die rollTotal={rollTotal} setRollTotal={setRollTotal} />
-            {/* <button onClick={(): void => restartGame()}>Restart</button> */}
         </main>
     );
 };

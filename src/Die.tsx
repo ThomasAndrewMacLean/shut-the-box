@@ -12,6 +12,25 @@ const Die: React.FunctionComponent<{
     const [die1, setDie1] = React.useState<number>(getDiceRoll());
     const [die2, setDie2] = React.useState<number>(getDiceRoll());
 
+    const getDieEmoji = (rolledNumber: number): string => {
+        switch (rolledNumber) {
+            case 1:
+                return '⚀';
+            case 2:
+                return '⚁';
+            case 3:
+                return '⚂';
+            case 4:
+                return '⚃';
+            case 5:
+                return '⚄';
+            case 6:
+                return '⚅';
+            default:
+                return '';
+        }
+    };
+
     const rollDice = (): void => {
         if (props.rollTotal === 0) {
             const die1 = getDiceRoll();
@@ -23,13 +42,17 @@ const Die: React.FunctionComponent<{
         }
     };
     return (
-        <div>
-            <h1>Dice</h1>
-            <button className="die-btn" onClick={(): void => rollDice()}>
-                Roll
-            </button>
-            <div className="die">{die1}</div>
-            <div className="die">{die2}</div>
+        <div className="die-wrapper">
+            {props.rollTotal === 0 ? (
+                <button className="die-btn" onClick={(): void => rollDice()}>
+                    Roll
+                </button>
+            ) : (
+                <>
+                    <div className="die">{getDieEmoji(die1)}</div>
+                    <div className="die">{getDieEmoji(die2)}</div>
+                </>
+            )}
         </div>
     );
 };
