@@ -30,15 +30,24 @@ const Die: React.FunctionComponent<{
         alert('shake');
         rollDice();
     }
+    const devOrientHandler = (eventData): void => {
+        var tiltFB = eventData.beta;
+        document.getElementById('debug').innerHTML = tiltFB;
+    };
     React.useEffect((): void => {
         console.log('UseEffect');
-        const myShakeEvent = new Shake({
-            threshold: 10, // optional shake strength threshold
-            // timeout: 1000, // optional, determines the frequency of event generation
-        });
-        myShakeEvent.start();
 
-        window.addEventListener('shake', shakeEventDidOccur, false);
+        if (window.DeviceOrientationEvent) {
+            // Listen for the event and handle DeviceOrientationEvent object
+            window.addEventListener('deviceorientation', devOrientHandler, false);
+        }
+        // const myShakeEvent = new Shake({
+        //     threshold: 10, // optional shake strength threshold
+        //     // timeout: 1000, // optional, determines the frequency of event generation
+        // });
+        // myShakeEvent.start();
+
+        // window.addEventListener('shake', shakeEventDidOccur, false);
     }, []);
 
     const getDieEmoji = (rolledNumber: number): string => {
@@ -62,6 +71,7 @@ const Die: React.FunctionComponent<{
 
     return (
         <div className="die-wrapper">
+            <span id="debug"></span>
             {props.rollTotal === 0 ? (
                 <button className="die-btn" onClick={(): void => rollDice()}>
                     Roll
