@@ -10,14 +10,26 @@ const Count: React.FunctionComponent<{
 }> = (props): JSX.Element => {
     const startTiles: boolean[] = [false, false, false, false, false, false, false, false, false];
     const [tiles, setTiles] = React.useState(startTiles);
-    const [rollTotal, setRollTotal] = React.useState(0);
+    const [rollTotal, setRollTotal] = React.useState<number>(0);
+    const [won, setWon] = React.useState<boolean>(true);
 
+    const checkWin = (index): void => {
+        const copyTiles = [...tiles];
+        if (copyTiles[index] === false) {
+            copyTiles[index] = true;
+            if (copyTiles.filter((t): boolean => t === false).length === 0 && rollTotal - index - 1 === 0) {
+                alert('You won ');
+                setWon(true);
+            }
+        }
+    };
     const flipTile = (index: number): void => {
         if (rollTotal - index - 1 >= 0) {
             setRollTotal(rollTotal - index - 1);
 
             setTiles([...tiles.slice(0, index), true, ...tiles.slice(index + 1)]);
         }
+        checkWin(index);
     };
 
     const restartGame = (): void => {

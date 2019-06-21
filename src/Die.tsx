@@ -46,7 +46,6 @@ const Die: React.FunctionComponent<{
 
     return (
         <div className="die-wrapper">
-            <span id="debug"></span>
             {props.rollTotal === 0 ? (
                 <button className="die-btn" onClick={(): void => rollDice()}>
                     Roll

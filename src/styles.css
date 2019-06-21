@@ -1,3 +1,7 @@
+:root {
+    --app-height: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +15,7 @@ body {
     font-family: 'Mali', cursive;
     margin: 2rem;
     user-select: none;
+    height: var(--app-height);
 }
 
 .hide {
