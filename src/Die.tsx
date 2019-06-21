@@ -27,7 +27,7 @@ const Die: React.FunctionComponent<{
     React.useEffect((): void => {
         console.log('UseEffect');
         const myShakeEvent = new Shake({
-            threshold: 15, // optional shake strength threshold
+            // threshold: 15, // optional shake strength threshold
             timeout: 1000, // optional, determines the frequency of event generation
         });
         myShakeEvent.start();
@@ -36,7 +36,7 @@ const Die: React.FunctionComponent<{
             //put your own code here etc.
             rollDice();
         }
-        window.addEventListener('shake', shakeEventDidOccur, false);
+        window.addEventListener('shake', rollDice, false);
 
         //function to call when shake occurs
     }, []);

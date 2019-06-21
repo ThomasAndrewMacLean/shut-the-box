@@ -27,7 +27,7 @@ const Count: React.FunctionComponent<{
     return (
         <main className="container">
             <header>
-                <h1>Shut-the-box</h1>
+                <h1>Shut-the-box.</h1>
                 <button className="restart-btn" onClick={(): void => restartGame()}>
                     Restart
                 </button>
