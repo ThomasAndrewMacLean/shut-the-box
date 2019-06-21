@@ -36,7 +36,6 @@ const Count: React.FunctionComponent<{
             <div className="numberTiles">
                 {tiles.map(
                     (tile, index): JSX.Element => {
-                        console.log(tile);
                         return (
                             <div
                                 className={tile ? 'show numberTile' : 'hide numberTile'}

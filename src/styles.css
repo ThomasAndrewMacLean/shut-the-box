@@ -10,6 +10,7 @@ html {
 body {
     font-family: 'Mali', cursive;
     margin: 2rem;
+    user-select: none;
 }
 
 .hide {

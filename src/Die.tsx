@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import './die.css';
+import Shake from 'shake.js';
 
 const Die: React.FunctionComponent<{
     rollTotal: number;
@@ -11,6 +12,34 @@ const Die: React.FunctionComponent<{
     };
     const [die1, setDie1] = React.useState<number>(getDiceRoll());
     const [die2, setDie2] = React.useState<number>(getDiceRoll());
+
+    const rollDice = (): void => {
+        if (props.rollTotal === 0) {
+            const die1 = getDiceRoll();
+            const die2 = getDiceRoll();
+            setDie1(die1);
+            setDie2(die2);
+
+            props.setRollTotal(die1 + die2);
+        }
+    };
+
+    React.useEffect((): void => {
+        console.log('UseEffect');
+        const myShakeEvent = new Shake({
+            threshold: 15, // optional shake strength threshold
+            timeout: 1000, // optional, determines the frequency of event generation
+        });
+        myShakeEvent.start();
+
+        function shakeEventDidOccur(): void {
+            //put your own code here etc.
+            rollDice();
+        }
+        window.addEventListener('shake', shakeEventDidOccur, false);
+
+        //function to call when shake occurs
+    }, []);
 
     const getDieEmoji = (rolledNumber: number): string => {
         switch (rolledNumber) {
@@ -31,16 +60,6 @@ const Die: React.FunctionComponent<{
         }
     };
 
-    const rollDice = (): void => {
-        if (props.rollTotal === 0) {
-            const die1 = getDiceRoll();
-            const die2 = getDiceRoll();
-            setDie1(die1);
-            setDie2(die2);
-
-            props.setRollTotal(die1 + die2);
-        }
-    };
     return (
         <div className="die-wrapper">
             {props.rollTotal === 0 ? (
