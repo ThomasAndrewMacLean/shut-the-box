@@ -24,22 +24,21 @@ const Die: React.FunctionComponent<{
         }
     };
 
+    //function to call when shake occurs
+    function shakeEventDidOccur(): void {
+        //put your own code here etc.
+        alert('shake');
+        rollDice();
+    }
     React.useEffect((): void => {
         console.log('UseEffect');
         const myShakeEvent = new Shake({
-            //threshold: 15, // optional shake strength threshold
+            threshold: 10, // optional shake strength threshold
             // timeout: 1000, // optional, determines the frequency of event generation
         });
         myShakeEvent.start();
 
         window.addEventListener('shake', shakeEventDidOccur, false);
-
-        function shakeEventDidOccur(): void {
-            //put your own code here etc.
-            alert('shake');
-            rollDice();
-        }
-        //function to call when shake occurs
     }, []);
 
     const getDieEmoji = (rolledNumber: number): string => {
