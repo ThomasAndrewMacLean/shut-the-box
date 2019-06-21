@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import './die.css';
-import Shake from 'shake.js';
+import useDeviceOrientation from '@rehooks/device-orientation';
 
 const Die: React.FunctionComponent<{
     rollTotal: number;
@@ -36,11 +36,13 @@ const Die: React.FunctionComponent<{
     };
     React.useEffect((): void => {
         console.log('UseEffect');
+        let value = useDeviceOrientation();
+        document.getElementById('debug').innerHTML = value.beta.toString();
 
-        if (window.DeviceOrientationEvent) {
-            // Listen for the event and handle DeviceOrientationEvent object
-            window.addEventListener('deviceorientation', devOrientHandler, false);
-        }
+        // if (window.DeviceOrientationEvent) {
+        //     // Listen for the event and handle DeviceOrientationEvent object
+        //     window.addEventListener('deviceorientation', devOrientHandler, false);
+        // }
         // const myShakeEvent = new Shake({
         //     threshold: 10, // optional shake strength threshold
         //     // timeout: 1000, // optional, determines the frequency of event generation

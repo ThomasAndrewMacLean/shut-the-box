@@ -33,9 +33,9 @@
     "typescript": "^3.5.2"
   },
   "dependencies": {
+    "@rehooks/device-orientation": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "shake.js": "^1.2.2"
+    "react-dom": "^16.8.6"
   }
 }
