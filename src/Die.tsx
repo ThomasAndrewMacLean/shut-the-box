@@ -24,11 +24,6 @@ const Die: React.FunctionComponent<{
         }
     };
 
-    React.useEffect((): void => {
-        console.log('UseEffect');
-        let value = useDeviceOrientation();
-        document.getElementById('debug').innerHTML = value.beta.toString();
-    }, []);
 
     const getDieEmoji = (rolledNumber: number): string => {
         switch (rolledNumber) {
