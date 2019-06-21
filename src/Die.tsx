@@ -1,7 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import './die.css';
-import useDeviceOrientation from '@rehooks/device-orientation';
 
 const Die: React.FunctionComponent<{
     rollTotal: number;
@@ -23,7 +22,6 @@ const Die: React.FunctionComponent<{
             props.setRollTotal(die1 + die2);
         }
     };
-
 
     const getDieEmoji = (rolledNumber: number): string => {
         switch (rolledNumber) {
