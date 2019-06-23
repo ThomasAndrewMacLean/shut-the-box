@@ -11,6 +11,7 @@ https://reactjs.org/docs/typechecking-with-proptypes.html
 ### Deploy on surge using travis:
 
 https://docs.travis-ci.com/user/deployment/surge/
+https://surge.sh/help/using-https-by-default
 
 ### Roll them dice:
 
