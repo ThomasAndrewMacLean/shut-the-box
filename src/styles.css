@@ -16,6 +16,7 @@ body {
     margin: 2rem;
     user-select: none;
     height: var(--app-height);
+    overflow: hidden;
 }
 
 .hide {

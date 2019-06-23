@@ -1,0 +1,8 @@
+footer {
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: calc(100% - 2rem);
+    margin-left: -1rem;
+}
