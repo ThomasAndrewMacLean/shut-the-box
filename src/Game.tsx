@@ -24,6 +24,7 @@ const Count: React.FunctionComponent<{
         }
     };
     const flipTile = (index: number): void => {
+        if (tiles[index]) return;
         if (rollTotal - index - 1 >= 0) {
             setRollTotal(rollTotal - index - 1);
 
