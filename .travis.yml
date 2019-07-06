@@ -8,7 +8,7 @@ script:
 deploy:
     provider: surge
     project: './dist/'
-    domain: https://shutthebox.xyz
+    domain: shutthebox.xyz
     skip_cleanup: true
     on:
         branch: master
