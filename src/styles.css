@@ -47,6 +47,7 @@ body {
 .container {
     max-width: 300px;
     /* height: 100vh; */
+    max-height: 85vh;
     overflow: hidden;
     background: bisque;
     margin: auto;
