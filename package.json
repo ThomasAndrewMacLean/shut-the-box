@@ -1,48 +1,48 @@
 {
-  "name": "shut-the-box",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ThomasAndrewMacLean/shut-the-box.git"
-  },
-  "keywords": [],
-  "author": "Thomas MacLean <hello@thomasmaclean.be> (https://thomasmaclean.be)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ThomasAndrewMacLean/shut-the-box/issues"
-  },
-  "homepage": "https://github.com/ThomasAndrewMacLean/shut-the-box#readme",
-  "devDependencies": {
-    "@types/react": "^16.8.20",
-    "@types/react-dom": "^16.8.4",
-    "@typescript-eslint/eslint-plugin": "^1.10.2",
-    "@typescript-eslint/parser": "^1.10.2",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^5.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.13.0",
-    "parcel-bundler": "^1.12.3",
-    "parcel-plugin-robot": "^1.0.0",
-    "parcel-plugin-sw-cache": "^0.3.1",
-    "prettier": "^1.18.2",
-    "surge": "^0.21.3",
-    "typescript": "^3.5.2"
-  },
-  "dependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "cache": {
-    "disablePlugin": false,
-    "inDev": true,
-    "strategy": "default",
-    "clearDist": true
-  }
+    "name": "shut-the-box",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "copy": "node helpers/copyStatic.js",
+        "dev": "parcel src/index.html",
+        "build": "parcel build src/index.html && node helpers/copyStatic.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ThomasAndrewMacLean/shut-the-box.git"
+    },
+    "keywords": [],
+    "author": "Thomas MacLean <hello@thomasmaclean.be> (https://thomasmaclean.be)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ThomasAndrewMacLean/shut-the-box/issues"
+    },
+    "homepage": "https://github.com/ThomasAndrewMacLean/shut-the-box#readme",
+    "devDependencies": {
+        "@types/react": "^16.8.20",
+        "@types/react-dom": "^16.8.4",
+        "@typescript-eslint/eslint-plugin": "^1.10.2",
+        "@typescript-eslint/parser": "^1.10.2",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^5.0.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-react": "^7.13.0",
+        "parcel-bundler": "^1.10.1",
+        "parcel-plugin-sw-cache": "^0.3.1",
+        "prettier": "^1.18.2",
+        "surge": "^0.21.3",
+        "typescript": "^3.5.2"
+    },
+    "dependencies": {
+        "prop-types": "^15.7.2",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6"
+    },
+    "cache": {
+        "disablePlugin": false,
+        "inDev": true,
+        "strategy": "default",
+        "clearDist": true
+    }
 }

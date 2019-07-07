@@ -10,16 +10,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <link rel="manifest" href="./site.webmanifest">
     <meta name="Description" content="Play shut the box game.">
-    <meta name="theme-color" content="#7fffd4"/>
+    <meta name="theme-color" content="#7fffd4" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@7homa5m" />
     <meta name="twitter:creator" content="@7homa5m" />
     <meta property="og:title" content="Shut the box 🎲" />
-    <meta property="og:url" content="https://shutthebox.surge.sh/" />
+    <meta property="og:url" content="https://shutthebox.xyz/" />
     <meta property="og:description" content="Roll the dice and remove the numbers to shut the box">
-    <meta property="og:image"
-          content="https://shutthebox.surge.sh/android-chrome-192x192.png">
+    <meta property="og:image" content="https://shutthebox.xyz/android-chrome-192x192.png">
 
 
     <!-- CODELAB: Add iOS meta tags and icons -->
@@ -28,34 +27,39 @@
     <meta name="apple-mobile-web-app-title" content="Shut-the-box">
     <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110018468-12"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110018468-12"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-110018468-12');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110018468-12');
+    </script>
 
 </head>
 
 <body>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-        .then((reg) => {
-          console.log('Service worker registered.', reg);
-        });
-  });
-}
-</script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            console.log("🤖")
+
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => {
+                        console.log('Service worker registered.', reg);
+                    });
+            });
+        }
+    </script>
     <div id="main"></div>
     <script src="./App.tsx"></script>
     <noscript>
- Please enable javascript to play the game!
-</noscript>
+        Please enable javascript to play the game!
+    </noscript>
 </body>
 
 </html>
