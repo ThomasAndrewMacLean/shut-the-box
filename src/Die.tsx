@@ -1,11 +1,29 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import './die.css';
+import Shake from "./shake";
 
 const Die: React.FunctionComponent<{
     rollTotal: number;
     setRollTotal: (rollTotal: number) => void;
 }> = (props): JSX.Element => {
+
+    React.useEffect(() => {
+
+        var myShakeEvent = new Shake({
+            threshold: 15, // optional shake strength threshold
+            timeout: 1200 // optional, determines the frequency of event generation
+          });
+        
+          myShakeEvent.start();
+        
+          window.addEventListener("shake", shakeEventDidOccur, false);
+        
+          //function to call when shake occurs
+          function shakeEventDidOccur() {
+            rollDice();
+          }
+    },[])
     const getDiceRoll = (): number => {
         return Math.floor(Math.random() * 6) + 1;
     };
