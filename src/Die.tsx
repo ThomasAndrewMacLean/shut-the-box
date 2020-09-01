@@ -20,10 +20,12 @@ const Die: React.FunctionComponent<{
           window.addEventListener("shake", shakeEventDidOccur, false);
         
           //function to call when shake occurs
-          function shakeEventDidOccur() {
-            rollDice();
-          }
+          
     },[])
+    function shakeEventDidOccur() {
+        rollDice();
+      }
+    
     const getDiceRoll = (): number => {
         return Math.floor(Math.random() * 6) + 1;
     };
